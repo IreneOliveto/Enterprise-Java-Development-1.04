@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -6,6 +8,7 @@ public class Main {
 
         int smallest = numbers[0];
         int largest = numbers[0];
+        int secondSmallest = numbers[0];
 
         for (int i = 1; i < numbers.length; i++) {
             if (numbers[i] > largest)
@@ -13,7 +16,17 @@ public class Main {
             else if (numbers[i] < smallest)
                 smallest = numbers[i];
         }
+        System.out.println(+(largest - smallest));
 
-        System.out.println(+(largest-smallest));
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i] < secondSmallest)
+                secondSmallest = numbers[i+1];
+        }
+
+        System.out.println(+(secondSmallest));
+
+
+
     }
+
 }
